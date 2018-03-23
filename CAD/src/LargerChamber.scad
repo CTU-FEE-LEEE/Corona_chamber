@@ -7,7 +7,7 @@ module netbase() {
 }
 
 module cut() {
-    color("SandyBrown") cube([40,15,3]); 
+    color("SandyBrown") cube([40,25,3]); 
 }
 
 module net() {
@@ -20,7 +20,7 @@ module net() {
 }
 
 module gnd() {
-    color("DarkKhaki") cube([90,90,6]);     
+    color("DarkKhaki") cube([90,80,6]);     
 }
 
 module visible() {
@@ -32,7 +32,7 @@ module innerFrame() {
     {        
         translate([14,-5,1]) net();        
         ceramic();
-        translate([9,0,-6])gnd();
+        translate([9,10,-6])gnd();
     }    
 }
 
@@ -47,14 +47,14 @@ module netbase1() {
 
 
 module gnd1() {
-    color("DarkKhaki") cube([91,91,6.4]); // y trnsl 0.5
+    color("DarkKhaki") cube([91,81,6.4]); // y trnsl 0.5
 }
 
 module visible1() {
     union(){
-        color("Red") cube([70,70,10]);
+        color("Red") cube([70,60,10]);
         translate([-5,-5,7])
-        color("Red") cube([80,80,10]);
+        color("Red") cube([80,70,10]);
     }
 }
 
@@ -63,8 +63,8 @@ module innerFrame1() {
     {
         translate([-0.5,-0.5,0]) ceramic1();
         translate([13.5,-5.5,1]) netbase1();        
-        translate([8.5,-0.5,-6.2])gnd1();
-        translate([19,10.5,1])visible1();
+        translate([8.5,9.5,-6.2])gnd1();
+        translate([19,20.5,1])visible1();
     }    
 }
 
@@ -85,9 +85,9 @@ module objectBox() {
     {
         box();
         innerFrame1();
-        translate([0,27.5,0]) hole();
-        translate([0,45,0]) hole();
-        translate([0,62.5,0]) hole();
+        translate([0,35,0]) hole();
+        translate([0,50,0]) hole();
+        translate([0,65,0]) hole();
     }
 }
 
