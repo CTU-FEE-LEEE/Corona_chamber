@@ -77,21 +77,58 @@ module  hole(){
 
 module box() {
     translate([-5.6,0,-6])
-    color("Red") cube([122.2,122.2,15]); 
+    color("Red") cube([122.2,122.2,15]);    
 }
+module prism(l, w, h){
+       polyhedron(
+               points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [3*l/8,0,h], [5*l/8,0,h],
+    [5*l/8,w,h], [3*l/8,w,h]],
+               faces=[[0,1,2,3], [4,7,6,5], [0,3,7,4], [2,6,7,3], [1,5,6,2], [0,4,5,1]]
+               );
+       }
+ 
+     
+
+       
+ module  cavHole(l, w, h){
+    translate([l/2,w/2,h/10])    
+    color("Red")
+    cylinder (3*h,d=3, $fn=100);
+}
+       
+module cavity(l,w,h){
+    rotate([90,0,90])
+    union(){
+        prism(l, w, h);
+        cavHole(l,w,h);        
+        } 
+    }
+    
+l = 40;
+w = 3;
+h = 10;
 
 module objectBox() {
     difference()
     {
         box();
         innerFrame1();
+        
+        //cavities
+        /*
+        translate([90,30,3.5]) cavity(l, w, h);        
+        translate([21,30,3.5])
+        mirror([1,0,0]) cavity(l, w, h);
+        */
+        
+        //holes
+        
         translate([0,35,0]) hole();
         translate([0,50,0]) hole();
         translate([0,65,0]) hole();
+        
     }
 }
 
-
-objectBox();
+objectBox(); 
 //innerFrame();
-
