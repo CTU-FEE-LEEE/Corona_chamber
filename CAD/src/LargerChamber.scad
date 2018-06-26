@@ -75,9 +75,16 @@ module  hole(){
     cylinder (130,d=3, $fn=100);
 }
 
+module  tempHole(){
+    translate([-10,0,5])
+    rotate ([0,90,0])
+    color("Red")
+    cylinder (60,d=1.8, $fn=100);
+}
+
 module box() {
     translate([-5.6,0,-6])
-    color("Red") cube([122.2,122.2,15]);    
+    color("Red") cube([122.2,122.2,18]);    
 }
 module prism(l, w, h){
        polyhedron(
@@ -113,6 +120,7 @@ module objectBox() {
     {
         box();
         innerFrame1();
+        translate([0,25,0]) tempHole();
         
         //cavities
         /*
@@ -132,3 +140,4 @@ module objectBox() {
 
 objectBox(); 
 //innerFrame();
+//translate([20.5,20.5,1])visible1();
