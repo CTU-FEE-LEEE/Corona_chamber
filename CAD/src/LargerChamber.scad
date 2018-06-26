@@ -84,7 +84,7 @@ module  tempHole(){
 
 module box() {
     translate([-5.6,0,-6])
-    color("Red") cube([122.2,122.2,18]);    
+    color("Red") cube([122.2,122.2,15]);    
 }
 module prism(l, w, h){
        polyhedron(
