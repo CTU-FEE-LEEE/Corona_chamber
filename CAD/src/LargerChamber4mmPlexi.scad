@@ -123,18 +123,17 @@ module objectBox() {
         translate([0,25,0]) tempHole();
         
         //cavities
-        /*
+
         translate([90,30,3.5]) cavity(l, w, h);        
         translate([21,30,3.5])
         mirror([1,0,0]) cavity(l, w, h);
-        */
         
         //holes
-        
+    /*    
         translate([0,35,0]) hole();
         translate([0,50,0]) hole();
         translate([0,65,0]) hole();
-        
+      */  
     }
 }
 
