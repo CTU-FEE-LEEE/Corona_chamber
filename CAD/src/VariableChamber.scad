@@ -59,11 +59,11 @@ module prism(l, w, h){
 module prismCut() {    
     union(){
         translate([(cdX+2*sct-ndY*0.8)/8+ndX*0.4,0,cdZ/2+ndZ+(uct-pdZ)/2])
-        prism(ndX*0.64,(uct-pdZ)/2,(cdX+2*sct-ndY*0.8)/4);
+        prism(ndY*0.64,(uct-pdZ)/2,(cdX+2*sct-ndY*0.8)/4);
         
         mirror([1,0,0])
         translate([(cdX+2*sct-ndY*0.8)/8+ndX*0.4,0,cdZ/2+ndZ+(uct-pdZ)/2])
-        prism(ndX*0.64,(uct-pdZ)/2,(cdX+2*sct-ndY*0.8)/4);
+        prism(ndY*0.64,(uct-pdZ)/2,(cdX+2*sct-ndY*0.8)/4);
         
         translate([0,0,cdZ/2+ndZ+(uct-pdZ)/2])
         rotate([0,90,0])
@@ -91,7 +91,7 @@ module frame() {
         box();
         ceramic();        
         netbase();
-        translate([0,-ndY/2,0]) netbase();
+        translate([0,-ndY,0]) netbase();
         gnd();
         visible();
         plexi();
