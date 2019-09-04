@@ -59,7 +59,7 @@ module visible1() {
 }
 
 module glass1() {
-    color("Red") cube([76.8,26.8,100]);    
+    color("Red") cube([76.8,26.6,100]);    
     }
 
 
@@ -70,7 +70,7 @@ module innerFrame1() {
         translate([15,-5.5,1.4]) netbase1();        
         translate([10,9.5,-6.2])gnd1();
         translate([20.5,20.5,1])visible1();
-        translate([17.2,36.2,1+7])glass1();
+        translate([17.2,36.3,1+7])glass1();
     }    
 }
 
