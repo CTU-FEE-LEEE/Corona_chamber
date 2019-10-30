@@ -1,22 +1,22 @@
-cdXtol = 1.2; //ceramic dimension X tolerance
+cdXtol = 1.0; //ceramic dimension X tolerance
 cdYtol = 0.6; //ceramic dimension Y tolerance
 cdZtol = 0.3; //ceramic dimension Z tolerance
-cdX = 51+cdXtol; //ceramic dimension X
-cdY = 51+cdYtol; //ceramic dimension Y
-cdZ = 1.2+cdZtol; //ceramic dimension Z
+cdX = 53+cdXtol; //ceramic dimension X
+cdY = 110+cdYtol; //ceramic dimension Y
+cdZ = 2.5+cdZtol; //ceramic dimension Z
 
-ndXtol = 1.2; //net base dimension X tolerance
-ndYtol = 0.6; //net base dimension Y tolerance
-ndZtol = 0.3; //net base dimension Z tolerance
-ndX = 36+ndXtol; //net base dimension X
-ndY = 40+ndYtol; //net base dimension Y
-ndZ = 0.4+ndZtol; //net base dimension Z
+ndXtol = 0.0; //net base dimension X tolerance
+ndYtol = 0.0; //net base dimension Y tolerance
+ndZtol = 0.0; //net base dimension Z tolerance
+ndX = 44+ndXtol; //net base dimension X
+ndY = 100+ndYtol; //net base dimension Y
+ndZ = 4.0+ndZtol; //net base dimension Z
 
 gdXtol = 0;// ground dimension Z tolerance
 gdZ = 6+gdXtol; //ground dimension Z
 
 uct = 10; //upper chamber thickness
-sct = 10; //side chamber thickness
+sct = 5; //side chamber thickness
 
 pdZ = 2; //plexi dimension Z
 
