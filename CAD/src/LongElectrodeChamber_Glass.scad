@@ -12,6 +12,13 @@ ndX = 50.1+ndXtol; //net base dimension X
 ndY = 103.8+ndYtol; //net base dimension Y
 ndZ = 1.1+ndZtol; //net base dimension Z
 
+glasdXtol = 0.3; //glass window dimension X tolerance
+glasdYtol = 0.3; //glass window dimension Y tolerance
+glasdZtol = 0.0; //glass window dimension Z tolerance
+glasdX = 26+glasdXtol; //glass window dimension X
+glasdY = 76+glasdYtol; //glass window dimension Y
+glasdZ = 1+glasdZtol; //glass window dimension Z
+
 gdXtol = 0;// ground dimension Z tolerance
 gdZ = 10+gdXtol; //ground dimension Z
 
@@ -46,12 +53,12 @@ module plexi() {
 
 module glassWindowFrame() {
     translate([0,0,cdZ/2+ndZ+uct-0])
-    color("Red") cube([21.7+0.5,71+0.5,pdZ], center=true); 
+    color("Red") cube([glasdX,glasdY,pdZ], center=true); 
 }
 
 module glassWindow() {
     translate([0,0,cdZ/2+ndZ+uct-pdZ/2])
-    color("Red") cube([21.7+0.5-2,71+0.5-2,pdZ], center=true); 
+    color("Red") cube([glasdX-3,glasdY-3,pdZ], center=true); 
 }
 module box() {
     translate([0,sct/2,-cdZ/2-gdZ+(cdZ+ndZ+gdZ+uct)/2])
