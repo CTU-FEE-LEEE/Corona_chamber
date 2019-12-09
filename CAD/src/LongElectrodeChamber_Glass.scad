@@ -1,8 +1,8 @@
 cdXtol = 0.3; //ceramic dimension X tolerance
-cdYtol = 0.5; //ceramic dimension Y tolerance
+cdYtol = 0.0; //ceramic dimension Y tolerance
 cdZtol = 0.2; //ceramic dimension Z tolerance
 cdX = 53.1+cdXtol; //ceramic dimension X
-cdY = 120+cdYtol; //ceramic dimension Y
+cdY = 118+cdYtol; //ceramic dimension Y
 cdZ = 1.4+cdZtol; //ceramic dimension Z
 
 ndXtol = 0.4; //net base dimension X tolerance
@@ -20,9 +20,9 @@ glasdY = 76+glasdYtol; //glass window dimension Y
 glasdZ = 1+glasdZtol; //glass window dimension Z
 
 gdXtol = 0;// ground dimension Z tolerance
-gdZ = 10+gdXtol; //ground dimension Z
+gdZ = 10.35+1+gdXtol; //ground dimension Z
 
-uct = 11; //upper chamber thickness
+uct = 9.5; //upper chamber thickness
 sct = 6; //side chamber thickness
 
 pdZ = 3; //plexi dimension Z
@@ -43,7 +43,7 @@ module gnd() {
 
 module visible() {
     translate([0,0,cdZ/2+ndZ+uct/2])
-    color("Red") cube([ndX*1,ndY*1,uct], center=true); 
+    color("Red") cube([40,87,uct], center=true); 
 }
 
 module plexi() {
@@ -111,9 +111,9 @@ module frame() {
         translate([0,-ndY,0]) netbase();
         gnd();
         visible();
-        //plexi();
+        plexi();
         //uncomment one of those
-        prismCut();
+        //prismCut();
         //holes();        
         }    
     }
