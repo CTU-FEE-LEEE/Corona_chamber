@@ -65,6 +65,11 @@ module box() {
     color("Green") cube([cdX+2*sct,cdY+sct,cdZ+ndZ+gdZ+uct], center=true); 
 }
 
+module electCav() {
+    translate([0,-(cdY)/4,cdZ/2+ndZ+0.5/2])
+    color("Red") cube([5.5,(cdY)/2,0.5], center=true); 
+}
+
 module prism(l, w, h){
        rotate([90,0,90])translate([-l/2,-w/2,-h/2]) polyhedron(
                points=[[0,0,0], [l,0,0], [l,w,0], [0,w,0], [3*l/8,0,h], [5*l/8,0,h],
@@ -112,9 +117,10 @@ module frame() {
         gnd();
         visible();
         plexi();
+        electCav();
         //uncomment one of those
         //prismCut();
-        //holes();        
+        holes();        
         }    
     }
 
@@ -133,7 +139,7 @@ module frameCoveredGlassWindow() {
     }
 frameCoveredGlassWindow();
     
-
+//electCav();
 //ceramic();
 //netbase();
 //gnd();
