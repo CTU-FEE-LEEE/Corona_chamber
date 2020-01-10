@@ -10,7 +10,7 @@ ndYtol = 0.0; //net base dimension Y tolerance
 ndZtol = 0.0; //net base dimension Z tolerance
 ndX = 44+ndXtol; //net base dimension X
 ndY = 100+ndYtol; //net base dimension Y
-ndZ = 4.0+ndZtol; //net base dimension Z
+ndZ = 0.0+ndZtol; //net base dimension Z
 
 gdXtol = 0;// ground dimension Z tolerance
 gdZ = 6+gdXtol; //ground dimension Z
@@ -96,8 +96,8 @@ module frame() {
         visible();
         plexi();
         //uncomment one of those
-        prismCut();
-        //holes();        
+        //prismCut();
+        holes();        
         }    
     }
 
